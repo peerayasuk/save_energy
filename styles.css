@@ -1,0 +1,1024 @@
+/* ---------------------------------------------------------
+   RESET
+--------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+    min-height: 100vh;
+}
+
+/* ---------------------------------------------------------
+   LOGIN PAGE
+--------------------------------------------------------- */
+body.login-page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.login-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+}
+
+.logo-container {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 80px;
+    height: 80px;
+    background: #dcfce7;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.logo svg {
+    width: 50px;
+    height: 50px;
+    color: #16a34a;
+}
+
+h1 {
+    color: #166534;
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 16px;
+    border: 2px solid #e5e7eb;
+    border-radius: 10px;
+    transition: all 0.3s;
+    font-size: 14px;
+}
+
+input:focus {
+    outline: none;
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+.btn-login {
+    width: 100%;
+    padding: 14px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background: #15803d;
+}
+
+.error-message {
+    background: #fef2f2;
+    color: #dc2626;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #dc2626;
+}
+
+.register-link {
+    margin-top: 20px;
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.register-link a {
+    color: #16a34a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ---------------------------------------------------------
+   MAIN INDEX PAGE (Header, Nav, Cards, Stats)
+--------------------------------------------------------- */
+header {
+    background: white;
+    border-bottom: 1px solid #dcfce7;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 16px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    color: #16a34a;
+}
+
+.logo-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #166534;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.user-info {
+    text-align: right;
+}
+
+.user-name {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.user-points {
+    font-size: 12px;
+    color: #16a34a;
+    font-weight: 600;
+}
+
+.btn-logout {
+    padding: 8px 16px;
+    border: none;
+    background: #f3f4f6;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.btn-logout:hover {
+    background: #e5e7eb;
+}
+
+/* Navigation */
+nav {
+    background: white;
+    border-bottom: 1px solid #dcfce7;
+}
+
+.nav-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    gap: 4px;
+}
+
+.nav-link {
+    padding: 12px 24px;
+    text-decoration: none;
+    color: #6b7280;
+    font-weight: 500;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s;
+}
+
+.nav-link:hover {
+    background: #f0fdf4;
+    color: #16a34a;
+}
+
+.nav-link.active {
+    background: #f0fdf4;
+    color: #15803d;
+    border-bottom-color: #16a34a;
+}
+
+/* Page content */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 32px 20px;
+}
+
+.card {
+    background: white;
+    padding: 32px;
+    border-radius: 16px;
+    margin-bottom: 24px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+}
+
+.card-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #166534;
+    margin-bottom: 16px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    margin: 24px 0;
+}
+
+.stat-card {
+    background: #f0fdf4;
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.stat-value {
+    font-size: 36px;
+    color: #15803d;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.btn-primary {
+    background: #16a34a;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 8px;
+}
+
+/* ---------------------------------------------------------
+   REGISTER PAGE (เหมือน login แต่แยก class ชัดเจน)
+--------------------------------------------------------- */
+
+body.register-page {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+    background: linear-gradient(135deg, #f0fdf4 0%, #d1fae5 100%);
+}
+
+.register-container {
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+    padding: 40px;
+    width: 100%;
+    max-width: 450px;
+    transform: translateY(-20px);
+}
+
+.register-container h1 {
+    color: #166534;
+    font-size: 28px;
+}
+
+.register-container .subtitle {
+    color: #6b7280;
+    font-size: 14px;
+}
+
+.success-message {
+    background: #f0fdf4;
+    color: #16a34a;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 4px solid #16a34a;
+}
+
+.btn-register {
+    width: 100%;
+    padding: 14px;
+    background: #16a34a;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.btn-register:hover {
+    background: #15803d;
+}
+
+.login-link {
+    margin-top: 20px;
+    background: #f9fafb;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.login-link a {
+    color: #16a34a;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+
+/* ---------------------------------------------------------
+   HOME PAGE
+--------------------------------------------------------- */
+
+.home-welcome-card {
+    text-align: center;
+}
+
+.home-icon {
+    width: 64px;
+    height: 64px;
+    color: #16a34a;
+    margin: 0 auto 16px;
+}
+
+.home-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #166534;
+    margin-bottom: 8px;
+}
+
+.home-subtitle {
+    color: #6b7280;
+    margin-bottom: 32px;
+}
+
+.home-links {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.home-link-item {
+    padding: 16px;
+    background: #f0fdf4;
+    border-radius: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: background 0.3s;
+}
+
+.home-link-item:hover {
+    background: #dcfce7;
+}
+
+.item-title {
+    font-weight: 600;
+    color: #166534;
+    margin-bottom: 4px;
+}
+
+.item-desc {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 24px 0;
+    margin-top: 40px;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ---------------------------------------------------------
+   LEARN PAGE (บทเรียน)
+--------------------------------------------------------- */
+
+.learn-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #166534;
+    margin-bottom: 24px;
+}
+
+.learn-card {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.learn-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.learn-card-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #166534;
+    margin-bottom: 16px;
+}
+
+.learn-card-content {
+    color: #374151;
+    line-height: 1.8;
+    white-space: pre-line;
+    /* ถ้าข้อความมีขึ้นบรรทัดใหม่ใน DB ให้แสดงตามจริง */
+}
+
+/* ---------------------------------------------------------
+   MISSIONS PAGE
+--------------------------------------------------------- */
+
+.missions-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #166534;
+    margin-bottom: 24px;
+}
+
+.missions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 24px;
+}
+
+.mission-card {
+    padding: 24px;
+    transition: 0.3s;
+}
+
+.mission-completed {
+    border: 2px solid #16a34a;
+}
+
+.mission-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 16px;
+}
+
+.mission-info {
+    flex: 1;
+}
+
+.mission-title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #166534;
+    margin-bottom: 8px;
+}
+
+.mission-desc {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.mission-status {
+    margin-left: 16px;
+}
+
+.mission-status-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.mission-status-icon.complete {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.mission-status-icon.pending {
+    background: #f3f4f6;
+    color: #9ca3af;
+}
+
+.mission-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 16px;
+}
+
+.mission-points {
+    display: flex;
+    align-items: center;
+}
+
+.mission-points-icon {
+    font-size: 18px;
+    color: #eab308;
+    margin-right: 6px;
+}
+
+.mission-points-text {
+    font-weight: bold;
+    color: #15803d;
+}
+
+.mission-form {
+    margin: 0;
+}
+
+.mission-btn {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+.mission-success {
+    font-size: 14px;
+    padding: 8px 16px;
+}
+
+/* ---------------------------------------------------------
+   PROGRESS PAGE
+--------------------------------------------------------- */
+
+.progress-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #166534;
+    margin-bottom: 24px;
+}
+
+/* สรุป 3 การ์ดด้านบน */
+.progress-summary-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.progress-summary-card {
+    color: white;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.summary-points {
+    background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
+}
+
+.summary-missions {
+    background: linear-gradient(135deg, #3b82f6 0%, #2563eb 100%);
+}
+
+.summary-quiz {
+    background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+}
+
+.summary-icon {
+    width: 48px;
+    height: 48px;
+    opacity: 0.9;
+    margin-bottom: 16px;
+}
+
+.summary-label {
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 4px;
+}
+
+.summary-value {
+    font-size: 40px;
+    font-weight: bold;
+}
+
+/* ภารกิจที่สำเร็จแล้ว */
+.completed-empty {
+    text-align: center;
+    padding: 48px 0;
+}
+
+.completed-empty-icon {
+    width: 64px;
+    height: 64px;
+    color: #d1d5db;
+    margin: 0 auto 16px;
+}
+
+.completed-empty-text {
+    color: #6b7280;
+    margin-bottom: 16px;
+}
+
+.completed-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.completed-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background: #f0fdf4;
+    border-radius: 8px;
+}
+
+.completed-item-main {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.completed-item-icon {
+    width: 24px;
+    height: 24px;
+    color: #16a34a;
+}
+
+.completed-item-title {
+    font-weight: 600;
+    color: #166534;
+}
+
+.completed-item-desc {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.completed-item-points {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.completed-item-points-icon {
+    width: 20px;
+    height: 20px;
+    color: #eab308;
+}
+
+.completed-item-points-text {
+    font-weight: bold;
+    color: #15803d;
+}
+
+/* ความคืบหน้าโดยรวม */
+.progress-overview {
+    margin-top: 8px;
+}
+
+.progress-overview-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.progress-overview-label {
+    font-weight: 600;
+    color: #374151;
+}
+
+.progress-overview-percent {
+    font-weight: 600;
+    color: #15803d;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 12px;
+    background: #e5e7eb;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: #16a34a;
+    transition: width 0.5s;
+}
+
+.progress-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin-top: 24px;
+}
+
+.progress-stat-card {
+    text-align: center;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.progress-stat-card.done {
+    background: #f0fdf4;
+}
+
+.progress-stat-card.remaining {
+    background: #fef3c7;
+}
+
+.progress-stat-value {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.progress-stat-card.done .progress-stat-value {
+    color: #15803d;
+}
+
+.progress-stat-card.remaining .progress-stat-value {
+    color: #d97706;
+}
+
+.progress-stat-label {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* การ์ดผลกระทบ */
+.impact-card {
+    background: linear-gradient(135deg, #16a34a 0%, #059669 100%);
+    color: white;
+    padding: 48px;
+    border-radius: 16px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-top: 24px;
+}
+
+.impact-icon {
+    width: 64px;
+    height: 64px;
+    margin: 0 auto 24px;
+    opacity: 0.9;
+}
+
+.impact-title {
+    font-size: 28px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.impact-text {
+    margin-bottom: 32px;
+    opacity: 0.9;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.impact-item {
+    background: rgba(255, 255, 255, 0.2);
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(10px);
+}
+
+.impact-value {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.impact-label {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+
+/* ---------------------------------------------------------
+   QUIZ PAGE STYLES
+--------------------------------------------------------- */
+
+/* การ์ดหลักของหน้า Quiz */
+.quiz-card {
+    max-width: 900px;
+    margin: 0 auto 32px;
+}
+
+/* หัวข้อหลักในการ์ด (ใช้ร่วมกับ .card-title เดิมได้) */
+.quiz-card .card-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #166534;
+    margin-bottom: 20px;
+}
+
+/* ฟอร์มทำควิซ */
+.quiz-form {
+    width: 100%;
+}
+
+/* กล่องคำถามแต่ละข้อ */
+.quiz-question {
+    border-bottom: 1px solid #e5e7eb;
+    padding: 20px 0;
+}
+
+.quiz-question:last-of-type {
+    border-bottom: none;
+}
+
+.quiz-question-text {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 12px;
+}
+
+/* ตัวเลือกคำตอบ */
+.quiz-options {
+    margin-left: 8px;
+}
+
+.quiz-option {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background 0.25s, transform 0.15s, box-shadow 0.15s;
+    border: 1px solid transparent;
+}
+
+.quiz-option+.quiz-option {
+    margin-top: 4px;
+}
+
+.quiz-option-input {
+    width: 18px;
+    height: 18px;
+    accent-color: #16a34a;
+    /* ถ้าเบราว์เซอร์รองรับ จะเปลี่ยนสี radio */
+}
+
+.quiz-option-text {
+    color: #374151;
+    font-size: 14px;
+}
+
+/* hover และ focus effect */
+.quiz-option:hover {
+    background: #f0fdf4;
+    border-color: #bbf7d0;
+    box-shadow: 0 2px 6px rgba(16, 185, 129, 0.15);
+    transform: translateY(-1px);
+}
+
+/* ปุ่มส่งคำตอบ */
+.quiz-submit-btn {
+    width: 100%;
+    margin-top: 8px;
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   QUIZ RESULT
+--------------------------------------------------------- */
+
+.quiz-result {
+    text-align: center;
+    padding: 24px 0 8px;
+}
+
+.quiz-result-title {
+    font-size: 24px;
+    font-weight: 700;
+    color: #166534;
+    margin-bottom: 8px;
+}
+
+.quiz-result-score {
+    font-size: 40px;
+    font-weight: 800;
+    color: #16a34a;
+    margin-bottom: 8px;
+}
+
+.quiz-result-desc {
+    color: #4b5563;
+    margin-bottom: 24px;
+}
+
+/* เฉลยคำถามหลังทำเสร็จ */
+.quiz-review {
+    text-align: left;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.quiz-review-item {
+    padding: 14px 16px;
+    background: #f9fafb;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.quiz-review-row {
+    display: flex;
+    align-items: flex-start;
+}
+
+.quiz-review-icon {
+    font-size: 18px;
+    margin-right: 10px;
+    line-height: 1.8;
+}
+
+/* สี icon ถูก/ผิด */
+.quiz-review-icon-correct {
+    color: #16a34a;
+}
+
+.quiz-review-icon-incorrect {
+    color: #dc2626;
+}
+
+.quiz-review-text {
+    flex: 1;
+}
+
+.quiz-review-question {
+    font-weight: 600;
+    color: #111827;
+    margin-bottom: 4px;
+}
+
+.quiz-review-answer {
+    font-size: 13px;
+    color: #15803d;
+}
+
+/* ปุ่มทำใหม่ */
+.quiz-retry-btn {
+    display: inline-block;
+    margin-top: 24px;
+    font-weight: 600;
+}
+
+/* ---------------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------------- */
+
+@media (max-width: 640px) {
+    .quiz-card {
+        padding: 20px 16px;
+    }
+
+    .quiz-result-score {
+        font-size: 32px;
+    }
+
+    .quiz-result-title {
+        font-size: 20px;
+    }
+}
